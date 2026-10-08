@@ -36,5 +36,5 @@ $grpP = array_values(array_filter($partners, fn($p) => !str_contains((string)$p[
   <div class="wrap ftr-bar"><span><?= e(setting('copyright')) ?></span><span>Designed &amp; developed by KIMSHEALTH</span></div>
 </footer>
 <a class="sticky-apply" href="<?= e(url('apply')) ?>">Apply now <?= icon('arrow') ?></a>
-<script src="<?= e(url('assets/js/site.js')) ?>?v=1" defer></script>
+<script src="<?= e(url('assets/js/site.js')) ?>?v=<?= (int)@filemtime(ROOT . '/assets/js/site.js') ?>" defer></script>
 </body></html>

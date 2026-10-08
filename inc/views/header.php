@@ -16,7 +16,7 @@ $nextCourse = open_course();
 <?php if ($fav = setting('favicon')): ?><link rel="icon" href="<?= e(media($fav)) ?>"><?php endif; ?>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="<?= e(url('assets/css/site.css')) ?>?v=1">
+<link rel="stylesheet" href="<?= e(url('assets/css/site.css')) ?>?v=<?= (int)@filemtime(ROOT . '/assets/css/site.css') ?>">
 <style>:root{--brand:<?= e($ok($col1)) ?>;--accent:<?= e($ok($col2)) ?>;--ink:<?= e($ok($col3)) ?>}</style>
 <?= setting('head_code') /* admin-controlled analytics snippet */ ?>
 </head>
