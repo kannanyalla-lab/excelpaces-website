@@ -31,6 +31,10 @@ $nextCourse = open_course();
         <span class="wm"><b>Excel<i>Paces</i></b><small>at KIMSHEALTH</small></span>
       <?php endif; ?>
     </a>
+    <?php $kl = setting('logo_kims') ?: (is_file(ROOT . '/assets/img/kimshealth.png') ? 'assets/img/kimshealth.png' : ''); if ($kl): ?>
+    <span class="brand-sep" aria-hidden="true"></span>
+    <a class="brand-kims" href="<?= e(setting('kims_url', 'https://www.kimshealth.org')) ?>" target="_blank" rel="noopener" aria-label="KIMSHEALTH"><img src="<?= e(media($kl)) ?>" alt="KIMSHEALTH"></a>
+    <?php endif; ?>
     <nav class="nav" id="nav" aria-label="Main">
       <?php foreach ($menu as $m): $active = ($m['url']==='/' ? $cur==='' : $cur===trim($m['url'],'/')); ?>
         <a href="<?= e($mu($m['url'])) ?>" class="<?= $m['cta'] ? 'cta' : '' ?> <?= $active ? 'on' : '' ?>"><?= e($m['label']) ?></a>

@@ -4,14 +4,16 @@ $partners = all('SELECT * FROM partners WHERE active=1 ORDER BY sort,id');
 $menu2 = all('SELECT * FROM menu WHERE active=1 AND cta=0 ORDER BY sort,id');
 $mu = fn($u) => preg_match('#^(https?:|mailto:|tel:)#', $u) ? $u : ($u === '/' ? url() : url($u));
 ?>
-<section class="partners" aria-label="KIMSHEALTH and group organisations">
-  <div class="wrap">
-    <p class="partners-t"><?= e(setting('partners_title')) ?></p>
-    <ul class="logos">
-      <?php foreach ($partners as $p): $inner = $p['logo'] ? '<img src="' . e(media($p['logo'])) . '" alt="' . e($p['name']) . '" loading="lazy">' : '<span class="logo-txt">' . e($p['name']) . '</span>'; ?>
-        <li><?= $p['url'] ? '<a href="' . e($p['url']) . '" target="_blank" rel="noopener">' . $inner . '</a>' : $inner ?></li>
-      <?php endforeach; ?>
-    </ul>
+<?php
+$logoHtml = function ($p) { $inner = $p['logo'] ? '<img src="' . e(media($p['logo'])) . '" alt="' . e($p['name']) . '" loading="lazy">' : '<span class="logo-txt">' . e($p['name']) . '</span>';
+    return '<li>' . ($p['url'] ? '<a href="' . e($p['url']) . '" target="_blank" rel="noopener" title="' . e($p['name']) . '">' . $inner . '</a>' : $inner) . '</li>'; };
+$fedP = array_values(array_filter($partners, fn($p) => str_contains((string)$p['url'], 'thefederation.uk')));
+$grpP = array_values(array_filter($partners, fn($p) => !str_contains((string)$p['url'], 'thefederation.uk')));
+?>
+<section class="partners" aria-label="Recognition and group organisations">
+  <div class="wrap pgrid">
+    <?php if ($fedP): ?><div class="pcol pcol-fed"><p class="partners-t">Recognised by</p><ul class="logos"><?php foreach ($fedP as $p) echo $logoHtml($p); ?></ul></div><?php endif; ?>
+    <div class="pcol"><p class="partners-t"><?= e(setting('partners_title')) ?></p><ul class="logos"><?php foreach ($grpP as $p) echo $logoHtml($p); ?></ul></div>
   </div>
 </section>
 <footer class="ftr">

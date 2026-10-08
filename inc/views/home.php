@@ -54,6 +54,27 @@
 </section>
 <?php endif; ?>
 
+<?php if (!empty($about['image'])):
+  preg_match_all('#<li>(.*?)</li>#is', (string)$about['body'], $lm); $pts = array_slice(array_map(fn($x) => trim(strip_tags($x)), $lm[1] ?? []), 0, 5);
+  preg_match('#<p>(.*?)</p>#is', (string)$about['body'], $pm); $intro = trim(strip_tags($pm[1] ?? '')); ?>
+<section class="sec split-sec">
+  <div class="wrap split">
+    <div class="split-img reveal">
+      <img class="si-main" src="<?= e(media($about['image'])) ?>" alt="Excel Paces course at KIMSHEALTH" loading="lazy">
+      <?php if (!empty($meritPage['image'])): ?><img class="si-sub" src="<?= e(media($meritPage['image'])) ?>" alt="" loading="lazy"><?php endif; ?>
+      <div class="si-badge"><b>4</b><span>days<br>5 stations</span></div>
+    </div>
+    <div class="split-t reveal">
+      <p class="eyebrow eb">The course</p>
+      <h2>Four days at KIMSHEALTH, Trivandrum</h2>
+      <?php if ($intro): ?><p class="muted"><?= e($intro) ?></p><?php endif; ?>
+      <?php if ($pts): ?><ul class="ticks"><?php foreach ($pts as $pt): ?><li><?= icon('check') ?><span><?= e($pt) ?></span></li><?php endforeach; ?></ul><?php endif; ?>
+      <p class="split-b"><a class="btn btn-accent" href="<?= e(url('course')) ?>">Explore the course <?= icon('arrow') ?></a> <a class="link" href="<?= e(url('merit')) ?>">Course merits <?= icon('arrow') ?></a></p>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
+
 <?php if ($stations): ?>
 <section class="sec tint">
   <div class="wrap">

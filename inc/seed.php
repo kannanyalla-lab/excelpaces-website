@@ -68,11 +68,10 @@ function seed_content(): void {
 
     $partners = [
         ['Federation of the Royal Colleges of Physicians of the UK', 'assets/img/federation.svg', 'https://www.thefederation.uk/about-us'],
-        ['KIMSHEALTH', '', 'https://www.kimshealth.org'],
-        ['Aster DM Healthcare', '', 'https://www.asterdmhealthcare.com'],
-        ['Aster Hospitals', '', 'https://www.asterhospitals.in'],
-        ['CARE Hospitals', '', 'https://www.carehospitals.com'],
-        ['Evercare', '', 'https://www.evercaregroup.com'],
+        ['KIMSHEALTH', 'assets/img/kimshealth.png', 'https://www.kimshealth.org'],
+        ['Aster Hospitals', 'assets/img/aster.png', 'https://www.asterhospitals.in'],
+        ['CARE Hospitals', 'assets/img/care.png', 'https://www.carehospitals.com'],
+        ['Evercare', 'assets/img/evercare.png', 'https://www.evercaregroup.com'],
     ];
     foreach ($partners as $i => $p) ins('partners', ['name'=>$p[0],'logo'=>$p[1],'url'=>$p[2],'sort'=>$i+1,'active'=>1]);
 

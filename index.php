@@ -31,6 +31,7 @@ if ($route === '') {
         'course' => open_course(),
         'photos' => all('SELECT * FROM gallery WHERE active=1 ORDER BY sort,id LIMIT 6'),
         'about' => one("SELECT * FROM pages WHERE slug='course'"),
+        'meritPage' => one("SELECT * FROM pages WHERE slug='merit'"),
     ]);
     exit;
 }

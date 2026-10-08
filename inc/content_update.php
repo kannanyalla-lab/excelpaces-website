@@ -57,8 +57,11 @@ function content_update_v3(): void {
     }
 
     // footer logos: Federation first, links on all
-    $links = ['KIMSHEALTH'=>'https://www.kimshealth.org','Aster DM'=>'https://www.asterdmhealthcare.com','Aster Hospitals'=>'https://www.asterhospitals.in','CARE'=>'https://www.carehospitals.com','evercare'=>'https://www.evercaregroup.com'];
+    $links = ['KIMSHEALTH'=>'https://www.kimshealth.org','Aster DM'=>'https://www.asterdmhealthcare.com','Aster Hospitals'=>'https://www.asterhospitals.in','CARE Hospitals'=>'https://www.carehospitals.com','evercare'=>'https://www.evercaregroup.com'];
     foreach ($links as $needle => $url) q("UPDATE partners SET url=? WHERE name LIKE ? AND (url IS NULL OR url='')", [$url, '%' . $needle . '%']);
+    q("UPDATE partners SET active=0 WHERE name LIKE 'Aster DM%'");
+    foreach (['KIMSHEALTH'=>'kimshealth','Aster Hospitals'=>'aster','CARE Hospitals'=>'care','evercare'=>'evercare'] as $needle => $f)
+        q("UPDATE partners SET logo=? WHERE name LIKE ? AND (logo IS NULL OR logo='')", ['assets/img/' . $f . '.png', '%' . $needle . '%']);
     if ((int)val("SELECT COUNT(*) FROM partners WHERE url LIKE '%thefederation.uk%'") === 0) {
         q('UPDATE partners SET sort=sort+1');
         ins('partners', ['name'=>'Federation of the Royal Colleges of Physicians of the UK','logo'=>'assets/img/federation.svg','url'=>'https://www.thefederation.uk/about-us','sort'=>1,'active'=>1]);
