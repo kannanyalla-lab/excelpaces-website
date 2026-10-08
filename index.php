@@ -27,7 +27,7 @@ if ($route === '') {
         'stations' => all("SELECT * FROM items WHERE kind='station' AND active=1 ORDER BY sort,id"),
         'why' => all("SELECT * FROM items WHERE kind='why' AND active=1 ORDER BY sort,id"),
         'faculty' => all('SELECT * FROM faculty WHERE active=1 AND featured=1 ORDER BY sort,id'),
-        'tests' => all("SELECT * FROM testimonials WHERE active=1 AND status='approved' ORDER BY sort,id"),
+        'tests' => array_slice(array_values(array_filter(all("SELECT * FROM testimonials WHERE active=1 AND status='approved' ORDER BY sort,id"), fn($t) => mb_strlen($t['quote']) <= 330)), 0, 14),
         'course' => open_course(),
         'photos' => all('SELECT * FROM gallery WHERE active=1 ORDER BY sort,id LIMIT 6'),
         'about' => one("SELECT * FROM pages WHERE slug='course'"),
@@ -40,6 +40,8 @@ if (!$page) { http_response_code(404); render('page', ['page' => ['title' => 'Pa
 
 $d = ['page' => $page, 'pageTitle' => $page['title'] . ' · ' . setting('site_name'), 'metaDesc' => $page['meta_desc'] ?: setting('meta_desc')];
 switch ($route) {
+    case 'merit':
+        $d['merits'] = all("SELECT * FROM items WHERE kind='merit' AND active=1 ORDER BY sort,id"); render('merit', $d); break;
     case 'faculty':
         $d['faculty'] = all('SELECT * FROM faculty WHERE active=1 ORDER BY sort,id'); render('faculty', $d); break;
     case 'testimonials':

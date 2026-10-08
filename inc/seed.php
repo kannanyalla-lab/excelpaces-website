@@ -4,7 +4,7 @@ function seed_content(): void {
         'site_name' => 'Excel Paces', 'tagline' => 'MRCP (UK) PACES course at KIMSHEALTH, Trivandrum',
         'color_primary' => '#12348A', 'color_accent' => '#E2231A', 'color_ink' => '#0A1A44',
         'phone' => '+91 471 2941306', 'phone2' => '+91 471 2941399', 'email' => 'kimshealth@excelpaces.com', 'notify_email' => 'kimshealth@excelpaces.com',
-        'address' => "P.B. No. 1, Anayara P.O.\nTrivandrum, Kerala, India",
+        'address' => "Course Administrator, EXCELPACES\nKIMSHEALTH, P.B. No 1, Anayara PO\nTrivandrum, Kerala – 695029, India",
         'map_embed' => '', 'meta_desc' => 'Four-day intensive MRCP (UK) PACES preparation course organised by KIMSHEALTH, Trivandrum. Small groups, international examiner faculty, mock exam with same-day feedback.',
         'hero_stat1_n' => '4', 'hero_stat1_l' => 'intensive days',
         'hero_stat2_n' => '4', 'hero_stat2_l' => 'candidates per group',
@@ -16,6 +16,9 @@ function seed_content(): void {
         'apply_terms' => "Places are allocated on a first come, first served basis, and seats are limited.\nRegistration continues until all seats are filled.\nFull payment is due at registration. The fee is returned if no place can be offered.\nWritten cancellations received before 1 September receive a refund minus a 20% service charge.\nCancellations after 1 September receive no refund.\nPaid fees cannot be transferred to a later course.\nIf the course is cancelled at short notice, candidates receive a full refund.",
         'apply_note' => 'Email us to confirm your place at kimshealth@excelpaces.com. Send the application form with your money transfer reference to Ms. Jessy Ajith, KIMSHEALTH, Thiruvananthapuram.',
         'cta_title' => 'Your PACES attempt deserves the best preparation.', 'cta_text' => 'Seats are limited to keep groups small. Apply early to secure your place at the next course.',
+        'federation_url' => 'https://www.thefederation.uk/about-us',
+        'federation_title' => 'The only course recognised by the Federation of the Royal Colleges of Physicians of the UK',
+        'federation_text' => 'The Federation of Royal Colleges of Physicians of the United Kingdom (the Royal College of Physicians of Edinburgh, the Royal College of Physicians and Surgeons of Glasgow and the Royal College of Physicians of London) has endorsed the quality of the ExcelPACES training course and provided a statement of endorsement that ExcelPACES is an ‘MRCP(UK) approved course’.',
         'partners_title' => 'A KIMSHEALTH initiative · part of the Aster DM Quality Care family',
     ];
     foreach ($S as $k => $v) set_setting($k, $v);
@@ -26,17 +29,19 @@ function seed_content(): void {
 
     $pages = [
       ['about','About Us','The course, the people, the promise',
-       "<p>The KIMSHEALTH Excel Paces course has gained approval from the MRCP (UK) Management Board and is supported and endorsed by the Royal Colleges of Physicians of London, Edinburgh and Glasgow.</p><p>The course is led by experienced examiners hailing from the UK, the Middle East, Malaysia, Sri Lanka and India, and is designed so that every candidate undergoes one-to-one presentations and receives individual feedback.</p><h3>Our vision</h3><p>To be a leading healthcare organisation of excellence that transforms lives through exceptional care.</p><h3>Our mission</h3><p>To provide high quality, cost effective care with courtesy, compassion and competence.</p><h3>Our values</h3><p>Compassion, Affordability, Ethics, Quality, Excellence, Transparency, Innovation, Trust.</p>"],
+       "<h2>Endorsement and approval by the Royal Colleges of Physicians (UK)</h2><p>The KIMSHEALTH course has gained approval from the MRCP (UK) Management Board, along with endorsement and support from the esteemed Royal Colleges of London, Edinburgh, and Glasgow. This serves as strong evidence of the course’s quality and recognition.</p><p>The course is led by experienced Examiners hailing from the UK, Middle East, Malaysia, Sri Lanka, and India. It offers a personalized approach, enabling every candidate to undergo one-to-one presentations and receive individual feedback.</p><p>With exceptional overall pass rates, the course is backed by endorsement and support from all three Royal Colleges of London, Edinburgh, and Glasgow, which further reinforces its credibility.</p><h2>What sets this course apart</h2><p>Its faculty of experienced Examiners come from diverse backgrounds, including the UK, Middle East, Malaysia, Sri Lanka, and India. Their wealth of knowledge and expertise ensures that candidates receive guidance from professionals who understand the intricacies of the MRCP examination.</p><p>One of the key advantages of the course is the personalized approach it offers. Each candidate has the opportunity to engage in one-to-one presentations with the faculty. This individualized attention allows for focused discussions, tailored feedback, and targeted support to address specific areas of improvement.</p><h2>We are KIMSHEALTH</h2><h3>Our Vision</h3><p>“To be a leading healthcare organization of excellence that transforms lives through exceptional care.”</p><h3>Our Values</h3><p>Compassion, Affordability, Ethics, Quality, Excellence, Transparency, Innovation, Trust.</p><h3>Our Mission</h3><p>“To provide high quality cost effective care with courtesy, compassion and competence.”</p>"],
       ['course','The Course','Four days. Five stations. One focused goal.',
-       "<p>Excel Paces is a four-day comprehensive MRCP (UK) PACES training programme organised by KIMSHEALTH in Trivandrum, Kerala, built as the final-stage preparation for the last hurdle to MRCP (UK).</p><ul><li>Four days of intensive revision covering all PACES stations</li><li>An international panel of experienced PACES tutors and examiners</li><li>Bedside teaching focused on examination technique, presentation and management</li><li>Small-group and individual attention across a wide range of cases</li><li>Guidance on meeting the current pass standards for each assessed skill</li><li>A mock examination, with results and feedback the same day</li><li>Content updated to match the latest examination guidelines</li></ul>"],
-      ['merit','Course Merit','Why candidates choose Excel Paces',
-       "<ul><li>A highly advanced, cost-effective PACES preparatory course</li><li>Dedicated, experienced senior PACES tutors and examiners</li><li>Demonstration of examination technique and presentation skills</li><li>Carefully chosen clinical cases and surrogates, with particular emphasis on Station 5</li><li>Small groups of four candidates taught in a high-intensity PACES-style format</li><li>Practice and feedback opportunities, plus a mock examination with same-day results</li><li>Ongoing updates to match the current MRCP PACES format</li></ul>"],
+       "<p>Excel Paces is a four-day comprehensive MRCP (UK) PACES training programme organised by KIMSHEALTH in Trivandrum, Kerala, built as the final-stage preparation for the last hurdle to MRCP (UK).</p><p>During the initial three days of this course, students receive intensive instruction on PACES stations 1, 2, 3, 4 and 5. The course culminates with a Mock Exam on the final day, allowing participants to put their knowledge to the test. Additionally, in the mornings, there are dedicated “special teaching sessions” that focus on selected topics.</p><ul><li>Four days of intensive revision course covering all PACES stations</li><li>International panel of highly experienced PACES tutors and examiners as faculty</li><li>Structured bedside teaching with emphasis on examination techniques, presentation and management</li><li>Focused attention as small groups, individuals and good variety of cases</li><li>Guidance to achieve the new pass standards in each of the required skills assessed in PACES exam</li><li>Mock examination with results and feedback on the same day</li><li>Continuous updating of the course with latest examination guidelines</li></ul><p><strong>Next course:</strong> October 1, 2, 3 &amp; 4, 2026 (Thursday, Friday, Saturday &amp; Sunday, 4 days).</p><p>A detailed course timetable will be provided on registration.</p>"],
+      ['merit','Course Merit','Six reasons candidates choose Excel Paces',
+       "<p>This course is designed as a highly advanced and cost-effective preparation programme for the PACES examination. Led by dedicated and experienced examiners, it offers comprehensive training to aspiring candidates.</p><p>In summary, this advanced and cost-effective PACES preparatory course provides a comprehensive learning experience. Led by experienced examiners, it offers a diverse clinical case bank, expert demonstrations of examination techniques and presentation skills, personalized small-group training, and complete coverage of the PACES 2023 format. The course concludes with a realistic mock examination and immediate feedback to enhance candidates’ readiness for the actual PACES examination.</p>"],
       ['venue','Venue & Resources','Getting here and what to bring',
-       "<p>The course is held at KIMSHEALTH, Anayara, Trivandrum, Kerala. Edit this page in the CMS to add travel, accommodation and resource information.</p>"],
+       "<h2>Where the course is held</h2><p><strong>KIMSHEALTH</strong><br>P.B. No 1, Anayara PO,<br>Trivandrum, Kerala – 695029, India<br>Telephone: +91 471 2941306 / 2941399<br>Email: kimshealth@excelpaces.com</p><h2>Travel and accommodation</h2><ul><li>Trivandrum International Airport is 10 km and the main bus station and railway station are 8 km away from KIMSHEALTH.</li><li>There are excellent hotels (3 to 5 star) in Trivandrum city, all within a 30 minute drive of the course venue.</li><li>Taxis, buses, three-wheelers and Uber are always available for transportation in the city and to commute from the hotel to the course venue.</li><li>KIMSHEALTH can arrange accommodation for candidates attending Excelpaces on prior request in a nearby hotel (at the expense of the candidate).</li><li>For those who want to do something exciting and explore Kerala, God’s Own Country, excellent sight-seeing tours and boating facilities in the nearby backwaters are available.</li></ul><h2>Good to know</h2><ul><li><strong>Weather:</strong> Pleasant at this time of the year.</li><li><strong>Communication:</strong> Kerala is a highly literate state and most people can communicate in English.</li><li><strong>Currency:</strong> Indian Rupees. Most hotels and shops accept international credit cards. It would be handy to carry some local currency for small transactions.</li></ul>"],
+      ['downloads','Downloads','Application form and course documents',
+       "<p><strong>MRCP PACES course application form</strong></p><p>Please complete the online registration on the <a href=\"/apply\">Apply Now</a> page. Upon receipt of the completed application by email, we will send you the bank transfer details for the money transfer.</p><p><a class=\"btn btn-accent\" href=\"https://excelpaces.com/wp-content/uploads/2023/05/EXCELPACES-Application-Form-Year-2023.doc\" target=\"_blank\" rel=\"noopener\">Download the application form (.doc)</a></p>"],
       ['faculty','Our Faculty','Examiners and tutors from the UK, Middle East, Malaysia, Sri Lanka and India','<p>Learn from clinicians who examine, teach and practise at the highest level.</p>'],
       ['testimonials','Candidate Testimonials','In the words of doctors who attended','<p>Feedback from candidates who have attended the course.</p>'],
       ['gallery','Media Gallery','Moments from the course','<p>A look inside the Excel Paces course.</p>'],
-      ['contact','Contact Us','We usually reply within one working day','<p>Questions about dates, fees, eligibility or accommodation? Send us a message or call.</p>'],
+      ['contact','Contact Us','We usually reply within one working day','<p>Please contact us through email or phone for matters regarding the Excel Paces course.</p><p><strong>All written correspondence to:</strong><br>Course Administrator, EXCELPACES<br>KIMSHEALTH<br>P.B. No 1, Anayara PO<br>Trivandrum, Kerala – 695029, India</p>'],
       ['apply','Apply Now','Reserve your place at the next course','<p>Complete the form and our team will confirm your seat and share payment details.</p>'],
     ];
     foreach ($pages as $p) ins('pages', ['slug'=>$p[0],'title'=>$p[1],'subtitle'=>$p[2],'body'=>$p[3],'image'=>'','meta_desc'=>'','active'=>1]);
@@ -65,40 +70,35 @@ function seed_content(): void {
     ];
     foreach ($items as $i => $t) ins('items', ['kind'=>$t[0],'title'=>$t[1],'text'=>$t[2],'icon'=>$t[3],'sort'=>$i+1,'active'=>1]);
 
-    $fac = [
-      ['Dr. M. I. Sahadulla','Chairman and Managing Director','KIMSHEALTH',1],
-      ['Dr. A. Saifudeen','Senior Consultant Physician','KIMSHEALTH · Internal Medicine and Benign Haematology',1],
-      ['Dr. Prasad Nair','Senior Consultant Nephrologist','',1],
-      ['Dr. Venkat Mahadevan','Consultant Physician in General Medicine','James Paget University Hospital, UK',1],
-      ['Dr. Ajit Thomas','Consultant in Internal and Acute Medicine','KIMSHEALTH',0],
-      ['Dr. Donald L. Farquhar','Consultant General Physician','',0],
-      ['Dr. Jacqueline Taylor','Consultant Physician in Medicine','',0],
-      ['Dr. Eric Livingston','Vice President (Medical), RCPSG','',0],
-      ['Dr. Elizabeth A. Murphy','Consultant Rheumatologist','',0],
-      ['Dr. Manoj Pazhampallil Mathews','Senior Consultant Physician','',0],
-      ['Dr. Shaji Mohamed Haneef','Senior Consultant in Internal Medicine','KIMSHEALTH, Trivandrum',0],
-      ['Prof. Mathew Thomas','Professor of Medicine','KIMSHEALTH Trivandrum and CSI Medical College',0],
-      ['Prof. Panduka Karunanayake','Professor in Clinical Medicine','University of Colombo, Sri Lanka',0],
-      ['Prof. Sunil Bhandari','Consultant in Nephrology','',0],
-    ];
-    foreach ($fac as $i => $f) ins('faculty', ['name'=>$f[0],'role'=>$f[1],'org'=>$f[2],'bio'=>'','photo'=>'','featured'=>$f[3],'sort'=>$i+1,'active'=>1]);
+    $facData = json_decode(file_get_contents(ROOT . '/inc/data/faculty.json'), true) ?: [];
+    foreach ($facData as $i => $f) {
+        $bio = '<p><strong>Qualifications:</strong> ' . htmlspecialchars($f['qual'], ENT_QUOTES) . '</p>';
+        foreach ($f['bio'] as $para) $bio .= '<p>' . htmlspecialchars($para, ENT_QUOTES) . '</p>';
+        ins('faculty', ['name'=>$f['name'],'role'=>$f['role'],'org'=>$f['org'],'bio'=>$bio,'photo'=>'','featured'=>in_array($f['match'], ['Sahadulla','Saifudeen','Prasad Nair','Mahadevan'], true) ? 1 : 0,'sort'=>$i+1,'active'=>1]);
+    }
 
-    $tes = [
-      ['Dr Venmanassery Sreejan Gopinath','The course is well designed for one exam going candidate.'],
-      ['Dr Arunima Kushari','This course really helped me a lot to get better understanding of the exam.'],
-      ['Dr Krutika Kale','Really valued the insight & feedback given by the examiners.'],
-      ['Dr Abdul Rasheed Kothur','Highly recommended to those who attend PACES.'],
-      ['Dr Moses John Wesley','This is one of the best PACES courses I came across. Highly organized.'],
-      ['Dr Nithin Prakash','An excellent course. Anyone planning to do PACES should attend.'],
-      ['Dr Mosaab Khalil','Very well-organized course. Well selected cases.'],
-      ['Dr Prasanth Kumar','Genuine intention to help MRCP aspirants.'],
-      ['Dr Sankar Nath Jha','Great course done by national & International faculties.'],
-      ['Dr. Shahna Subair','Truly custom-made course to give a clear understanding of PACES Exam'],
-    ];
-    foreach ($tes as $i => $t) ins('testimonials', ['name'=>$t[0],'role'=>'Course attendee','quote'=>$t[1],'photo'=>'','sort'=>$i+1,'active'=>1,'email'=>'','status'=>'approved','created'=>date('Y-m-d H:i:s')]);
+    $tes = json_decode(file_get_contents(ROOT . '/inc/data/testimonials.json'), true) ?: [];
+    foreach ($tes as $i => $t) ins('testimonials', ['name'=>$t['n'],'role'=>'Course attendee','quote'=>$t['t'],'photo'=>'','sort'=>$i+1,'active'=>1,'email'=>'','status'=>'approved','created'=>date('Y-m-d H:i:s')]);
 
     ins('courses', ['title'=>'MRCP (UK) PACES Course','start_date'=>'2026-10-01','end_date'=>'2026-10-04','venue'=>'KIMSHEALTH, Anayara, Trivandrum','fee'=>'','seats'=>'Limited','status'=>'closed','note'=>'Previous course. Add the next course in the CMS (Courses & Dates) and it will appear on the home page with a live countdown.','active'=>1]);
 
-    foreach ([['KIMSHEALTH',''],['Aster DM Quality Care',''],['Aster Hospitals',''],['CARE Hospitals',''],['evercare','']] as $i => $p)
-        ins('partners', ['name'=>$p[0],'logo'=>'','url'=>'','sort'=>$i+1,'active'=>1]);
+    $partners = [
+        ['Federation of the Royal Colleges of Physicians of the UK', 'assets/img/federation.svg', 'https://www.thefederation.uk/about-us'],
+        ['KIMSHEALTH', '', 'https://www.kimshealth.org'],
+        ['Aster DM Healthcare', '', 'https://www.asterdmhealthcare.com'],
+        ['Aster Hospitals', '', 'https://www.asterhospitals.in'],
+        ['CARE Hospitals', '', 'https://www.carehospitals.com'],
+        ['Evercare', '', 'https://www.evercaregroup.com'],
+    ];
+    foreach ($partners as $i => $p) ins('partners', ['name'=>$p[0],'logo'=>$p[1],'url'=>$p[2],'sort'=>$i+1,'active'=>1]);
+
+    $merits = [
+        ['Cost-effective and advanced','A highly advanced, affordable PACES preparation programme led by dedicated, experienced examiners.','target'],
+        ['A large clinical case bank','Typical PACES cases, carefully chosen to mirror the scenarios you are likely to meet in the real examination.','steth'],
+        ['Examiners demonstrate the technique','See the correct approach to examination and presentation shown by working PACES examiners, then practise it yourself.','users'],
+        ['Four candidates per teacher','A small-group format gives personal attention, room to ask questions and individual feedback.','chat'],
+        ['The new PACES 2023 format','Every station of the updated format is covered, aligned with the latest requirements and expectations.','check'],
+        ['Mock exam with same-day results','A realistic final-day mock examination, with results and feedback the same day so you can refine your skills before the real one.','clock'],
+    ];
+    foreach ($merits as $i => $m) ins('items', ['kind'=>'merit','title'=>$m[0],'text'=>$m[1],'icon'=>$m[2],'sort'=>$i+1,'active'=>1]);
 }

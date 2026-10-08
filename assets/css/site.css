@@ -125,3 +125,38 @@ img{max-width:100%;display:block}a{color:var(--brand)}h1,h2,h3,h4{font-family:va
 .tsub{margin-top:50px}.tsub .formcard{position:static;max-width:760px}
 @media(max-width:1020px){.strip{grid-template-columns:repeat(3,1fr)}}@media(max-width:600px){.emp-row{grid-template-columns:1fr 1fr}.emp-row input:first-child{grid-column:1/-1}.strip{grid-template-columns:repeat(2,1fr)}}
 .fieldset{display:grid;gap:6px}.fieldset .lbl{font-weight:600;font-size:14px;color:var(--ink)}
+
+/* Federation band */
+.fed{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(40px,6vw,72px) 0}
+.fed-in{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:clamp(28px,5vw,70px);align-items:center}
+.fed-logo{display:block;padding:34px 30px;border:1px solid var(--line);border-radius:var(--r);background:#fff;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+.fed-logo:hover{transform:translateY(-4px)}.fed-logo img{width:100%;height:auto}
+.fed-t h2{font-size:clamp(24px,3vw,36px);margin:6px 0 14px}.fed-t p{color:var(--muted);margin:0 0 16px;max-width:62ch}
+@media(max-width:820px){.fed-in{grid-template-columns:1fr}}
+
+/* Course Merit page */
+.mhead-in{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;position:relative;z-index:1}
+.mstats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mstats li{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:16px 18px;backdrop-filter:blur(4px)}
+.mstats b{display:block;font:700 38px/1 var(--serif);color:#fff}.mstats span{font-size:13px;color:#cfd9fb}
+.mintro{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,56px);align-items:center;margin-bottom:56px}
+.mimg{border-radius:var(--r);box-shadow:var(--shadow);width:100%;height:auto}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mcard{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 26px 28px;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+.mcard:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--brand)}
+.mcard::after{content:"";position:absolute;left:0;top:0;height:4px;width:0;background:var(--accent);transition:width .35s}.mcard:hover::after{width:100%}
+.mnum{position:absolute;right:20px;top:10px;font:700 64px/1 var(--serif);color:var(--tint)}
+.mcard .ico{margin-bottom:18px;position:relative}.mcard h3{font-size:20px;margin-bottom:8px;position:relative}.mcard p{margin:0;color:var(--muted);position:relative}
+.mflow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:m}
+.mflow li{background:#fff;border-radius:var(--r);padding:26px;border-left:4px solid var(--accent);box-shadow:0 10px 30px -18px rgba(10,26,68,.3)}
+.mflow i{font:700 12px var(--sans);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.mflow h3{font-size:20px;margin:8px 0}.mflow p{margin:0;color:var(--muted)}
+.mrec{margin:34px 0 0;font:600 20px var(--serif);color:var(--ink);text-align:center}.mcta{text-align:center;margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+@media(max-width:900px){.mhead-in,.mintro{grid-template-columns:1fr}.mgrid,.mflow{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.mgrid,.mflow{grid-template-columns:1fr}}
+/* Footer logos: clickable, uniform */
+.logos a{display:flex;align-items:center;justify-content:center;transition:transform .2s,opacity .2s}.logos a:hover{transform:translateY(-2px)}
+.logos .logo-txt{font:700 17px var(--serif);color:var(--ink)}.logos a:hover .logo-txt{color:var(--brand)}
+.mcta .btn-ghost{border-color:var(--brand);color:var(--brand)}.mcta .btn-ghost:hover{background:var(--brand);color:#fff}
+.mintro.noimg{grid-template-columns:1fr;max-width:820px}
+.logos li:first-child img{height:62px;filter:none;opacity:1}

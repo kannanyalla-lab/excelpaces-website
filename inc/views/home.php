@@ -90,6 +90,22 @@
 </section>
 <?php endif; ?>
 
+<?php if (setting('federation_url')): ?>
+<section class="fed">
+  <div class="wrap fed-in">
+    <a class="fed-logo reveal" href="<?= e(setting('federation_url')) ?>" target="_blank" rel="noopener" aria-label="The Federation of the Royal Colleges of Physicians of the UK">
+      <img src="<?= e(url('assets/img/federation.svg')) ?>" alt="The Federation of Royal Colleges of Physicians of the UK" loading="lazy">
+    </a>
+    <div class="fed-t reveal">
+      <p class="eyebrow eb">Recognised by the Federation</p>
+      <h2><?= e(setting('federation_title')) ?></h2>
+      <p><?= e(setting('federation_text')) ?></p>
+      <a class="link" href="<?= e(setting('federation_url')) ?>" target="_blank" rel="noopener">About the Federation <?= icon('arrow') ?></a>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
+
 <?php if ($why): ?>
 <section class="sec dark">
   <div class="wrap">

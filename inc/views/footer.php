@@ -22,7 +22,7 @@ $mu = fn($u) => preg_match('#^(https?:|mailto:|tel:)#', $u) ? $u : ($u === '/' ?
       <?php else: ?><div class="ftr-brand"><b>Excel<i>Paces</i></b><small>at KIMSHEALTH</small></div><?php endif; ?>
       <p><?= e(setting('footer_text')) ?></p>
     </div>
-    <div><h4>Explore</h4><ul><?php foreach ($menu2 as $m): ?><li><a href="<?= e($mu($m['url'])) ?>"><?= e($m['label']) ?></a></li><?php endforeach; ?><li><a href="<?= e(url('venue')) ?>">Venue &amp; Resources</a></li></ul></div>
+    <div><h4>Explore</h4><ul><?php foreach ($menu2 as $m): ?><li><a href="<?= e($mu($m['url'])) ?>"><?= e($m['label']) ?></a></li><?php endforeach; ?><li><a href="<?= e(url('venue')) ?>">Venue &amp; Resources</a></li><li><a href="<?= e(url('downloads')) ?>">Downloads</a></li></ul></div>
     <div><h4>Contact</h4>
       <ul class="ci">
         <?php if ($a = setting('address')): ?><li><?= icon('pin') ?><span><?= nl2br(e($a)) ?></span></li><?php endif; ?>

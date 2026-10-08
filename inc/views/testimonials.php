@@ -1,6 +1,6 @@
 <section class="phead"><div class="wrap"><p class="eyebrow"><a href="<?= e(url()) ?>">Home</a> / Testimonials</p><h1><?= e($page['title']) ?></h1><p class="lead"><?= e($page['subtitle']) ?></p></div></section>
 <section class="sec"><div class="wrap"><div class="masonry">
-<?php foreach ($tests as $t): ?><figure class="tcard reveal"><blockquote>“<?= e($t['quote']) ?>”</blockquote><figcaption><span class="av"><?= e(mb_substr(preg_replace('/^(Dr\.?|Prof\.?)\s*/i', '', $t['name']), 0, 1)) ?></span><div><b><?= e($t['name']) ?></b><span><?= e($t['role']) ?></span></div></figcaption></figure><?php endforeach; ?>
+<?php foreach ($tests as $t): ?><figure class="tcard reveal"><blockquote>“<?= nl2br(e($t['quote'])) ?>”</blockquote><figcaption><span class="av"><?= e(mb_substr(preg_replace('/^(Dr\.?|Prof\.?)\s*/i', '', $t['name']), 0, 1)) ?></span><div><b><?= e($t['name']) ?></b><span><?= e($t['role']) ?></span></div></figcaption></figure><?php endforeach; ?>
 </div></div></section>
 <section class="sec tint" id="share"><div class="wrap tsub">
   <header class="sec-h"><p class="eyebrow eb">Attended the course?</p><h2>Share your experience</h2><p class="muted">Your testimonial is reviewed by our team before it appears on this page. Your e-mail address is never shown.</p></header>
