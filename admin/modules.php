@@ -1,0 +1,38 @@
+<?php
+// Declarative CMS modules. Add a new editable content type by adding an entry here.
+$MODULES = [
+ 'pages' => ['title'=>'Pages','single'=>'page','table'=>'pages','group'=>'Content','icon'=>'📄','order'=>'id','cols'=>['title','slug','active'],
+   'help'=>'Edit the text of every page. Pages like Faculty, Testimonials, Gallery, Contact and Apply show this text above their automatic content.',
+   'fields'=>[['title','Title','text'],['subtitle','Sub-heading (shown in the banner)','text'],['slug','URL slug','slug','help'=>'e.g. "about" becomes /about'],['body','Content','rich'],['image','Top image (optional)','image'],['meta_desc','Search-engine description (SEO)','textarea'],['active','Published','check']],
+   'protect'=>['about','course','merit','venue','faculty','testimonials','gallery','contact','apply']],
+ 'slides' => ['title'=>'Home Banners','single'=>'banner','table'=>'slides','group'=>'Content','icon'=>'🖼','order'=>'sort,id','cols'=>['title','eyebrow','sort','active'],
+   'help'=>'The rotating headline banners at the top of the home page.',
+   'fields'=>[['eyebrow','Small line above headline','text'],['title','Headline','text'],['text','Supporting text','textarea'],['btn_label','Button label','text'],['btn_url','Button link','text','help'=>'A page slug (e.g. apply) or full web address'],['image','Background photo (optional, wide image)','image'],['sort','Order','number'],['active','Show','check']]],
+ 'courses' => ['title'=>'Courses & Dates','single'=>'course','table'=>'courses','group'=>'Content','icon'=>'📅','order'=>'start_date DESC','cols'=>['title','start_date','end_date','status','active'],
+   'help'=>'Add each course. The soonest OPEN course drives the countdown on the home page and the Apply form.',
+   'fields'=>[['title','Course title','text'],['start_date','Start date','date'],['end_date','End date','date'],['venue','Venue','text'],['fee','Fee (shown to visitors)','text'],['seats','Seats note','text'],['status','Status','select','opts'=>['open'=>'Open for applications','full'=>'Full (waiting list)','closed'=>'Closed / past']],['note','Internal note','textarea'],['active','Show','check']]],
+ 'items' => ['title'=>'Highlights & Stations','single'=>'item','table'=>'items','group'=>'Content','icon'=>'✨','order'=>'kind,sort,id','cols'=>['kind','title','sort','active'],
+   'help'=>'Cards on the home page. For stations, name them like "Station 1 · Respiratory & Abdominal".',
+   'fields'=>[['kind','Section','select','opts'=>['highlight'=>'Highlight cards','station'=>'PACES stations explorer','why'=>'Recognition (dark section)']],['title','Title','text'],['text','Text','textarea'],['icon','Icon','icon'],['sort','Order','number'],['active','Show','check']]],
+ 'faculty' => ['title'=>'Faculty','single'=>'faculty member','table'=>'faculty','group'=>'Content','icon'=>'🩺','order'=>'sort,id','cols'=>['name','role','featured','sort','active'],
+   'help'=>'Tick "Feature on home page" for the people shown on the home page. Add a bio to enable the pop-up.',
+   'fields'=>[['name','Name','text'],['role','Designation','text'],['org','Hospital / institution','text'],['photo','Photo','image'],['bio','Biography (optional)','rich'],['featured','Feature on home page','check'],['sort','Order','number'],['active','Show','check']]],
+ 'testimonials' => ['title'=>'Testimonials','single'=>'testimonial','table'=>'testimonials','group'=>'Content','icon'=>'💬','order'=>"CASE WHEN status='pending' THEN 0 ELSE 1 END,sort,id",'cols'=>['name','status','quote','created'],
+   'help'=>'Visitors can submit testimonials from the Testimonials page. New ones arrive as "pending" and are only shown on the website after you approve them.',
+   'fields'=>[['name','Name','text'],['role','Role / batch','text'],['quote','Testimonial','textarea'],['email','Submitter e-mail (private)','email'],['status','Status','select','opts'=>['pending'=>'Pending approval (hidden)','approved'=>'Approved (published)']],['sort','Order','number']]],
+ 'partners' => ['title'=>'Footer Logos','single'=>'logo','table'=>'partners','group'=>'Site','icon'=>'🏥','order'=>'sort,id','cols'=>['name','logo','sort','active'],
+   'help'=>'Corporate logos shown at the bottom of every page (KIMSHEALTH, Aster, CARE, evercare, etc). Upload a PNG/JPG/WEBP, ideally with a transparent background and about 300px height. Without a logo the name is shown as text.',
+   'fields'=>[['name','Organisation name','text'],['logo','Logo image','image'],['url','Website link (optional)','text'],['sort','Order','number'],['active','Show','check']]],
+ 'menu' => ['title'=>'Menu','single'=>'menu link','table'=>'menu','group'=>'Site','icon'=>'☰','order'=>'sort,id','cols'=>['label','url','sort','active'],
+   'help'=>'Main navigation. Tick "Highlight button" for the red call-to-action.',
+   'fields'=>[['label','Label','text'],['url','Link','text','help'=>'Page slug (about), "/" for home, or a full web address'],['sort','Order','number'],['cta','Highlight button','check'],['active','Show','check']]],
+ 'users' => ['title'=>'Admin Users','single'=>'user','table'=>'users','group'=>'Site','icon'=>'🔑','order'=>'id','cols'=>['name','email'],
+   'fields'=>[['name','Name','text'],['email','E-mail (login)','email'],['pass','Password','password','help'=>'Leave blank to keep the current password. Minimum 8 characters.']]],
+];
+$SETTINGS = [
+ 'Identity & colours' => [['site_name','Site name','text'],['tagline','Tagline','text'],['logo_main','Main logo (replaces the built-in wordmark)','image'],['favicon','Favicon / browser icon','image'],['color_primary','Primary colour (KIMSHEALTH blue)','color'],['color_accent','Accent colour (KIMSHEALTH red)','color'],['color_ink','Dark text / footer colour','color']],
+ 'Contact details' => [['phone','Phone','text'],['phone2','Second phone','text'],['email','Public e-mail','text'],['notify_email','Send form notifications to','text'],['address','Address','textarea'],['map_embed','Google Maps embed code','textarea','help'=>'Google Maps → Share → Embed a map → copy the <iframe> code']],
+ 'Home page' => [['hero_stat1_n','Stat 1 number','text'],['hero_stat1_l','Stat 1 label','text'],['hero_stat2_n','Stat 2 number','text'],['hero_stat2_l','Stat 2 label','text'],['hero_stat3_n','Stat 3 number','text'],['hero_stat3_l','Stat 3 label','text'],['endorse_quote','Chairman’s quote','textarea'],['endorse_name','Quote author','text'],['endorse_role','Author role','text'],['endorse_photo','Author photo','image'],['cta_title','Bottom call-to-action title','text'],['cta_text','Call-to-action text','textarea']],
+ 'Apply page' => [['apply_terms','Terms & conditions (one point per line)','textarea'],['apply_note','Payment / confirmation note','textarea']],
+ 'Footer & SEO' => [['partners_title','Heading above footer logos','text'],['footer_text','Footer description','textarea'],['copyright','Copyright line','text'],['meta_desc','Default search description','textarea'],['head_code','Analytics / tracking code (advanced)','textarea','help'=>'Pasted into every page’s <head>, for example Google Analytics.']],
+];
