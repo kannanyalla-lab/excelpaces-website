@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ((int)val('SELECT COUNT(*) FROM settings') === 0) {
                 seed_content();
             }
-            set_setting('schema_v', '2');
+            set_setting('schema_v', '2'); set_setting('content_v', '3');
             file_put_contents(ROOT . '/config.php', "<?php\nreturn " . var_export($CFG, true) . ";\n");
             @chmod(ROOT . '/config.php', 0640);
             // best-effort: copy photos from the original excelpaces.com site

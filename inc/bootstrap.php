@@ -29,4 +29,5 @@ require ROOT . '/inc/helpers.php';
 require ROOT . '/inc/schema.php';
 try {
     if (setting('schema_v') !== '2') { migrate_schema(db(), $CFG['driver'] ?? 'mysql'); set_setting('schema_v', '2'); }
+    if (setting('content_v') !== '3') { require_once __DIR__ . '/content_update.php'; try { content_update_v3(); set_setting('content_v', '3'); } catch (Throwable $e) { error_log('content_update_v3: ' . $e->getMessage()); } }
 } catch (Throwable $e) { error_log('migrate: ' . $e->getMessage()); }
